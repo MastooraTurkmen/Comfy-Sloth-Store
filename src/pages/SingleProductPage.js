@@ -34,7 +34,9 @@ const SingleProductPage = () => {
     }
   }, [error])
 
-
+  if (loading) {
+    return <Loading />
+  }
   if (error) {
     return <Error />
   }
