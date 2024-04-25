@@ -1,7 +1,11 @@
 import React from 'react'
 
 const Loading = () => {
-  return <h4>loading element</h4>
+  return (
+    <div className="section section-cneter">
+      <div className="loading"></div>
+    </div>
+  )
 }
 
 export default Loading
