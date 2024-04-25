@@ -26,6 +26,14 @@ const SingleProductPage = () => {
 
   console.log(product);
 
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        navigate('/')
+      }, 5000)
+    }
+  }, [error])
+
   return (
     <Wrapper>
       <h4>single product page</h4>
