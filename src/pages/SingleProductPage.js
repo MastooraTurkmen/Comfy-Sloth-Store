@@ -34,6 +34,11 @@ const SingleProductPage = () => {
     }
   }, [error])
 
+
+  if (error) {
+    return <Error />
+  }
+
   return (
     <Wrapper>
       <h4>single product page</h4>
