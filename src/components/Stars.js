@@ -27,7 +27,7 @@ const Stars = ({ stars, reviews }) => {
       {/* end of star */}
       {/* star */}
       <span>
-        {stars = 5 ? <BsStarFill /> : stars >= 4.5 ? <BsStarHalf /> : <BsStar />}
+        {stars === 5 ? <BsStarFill /> : stars >= 4.5 ? <BsStarHalf /> : <BsStar />}
       </span>
       {/* end of star */}
     </div>
