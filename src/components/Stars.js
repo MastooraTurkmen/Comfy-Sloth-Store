@@ -25,6 +25,11 @@ const Stars = ({ stars, reviews }) => {
         {stars >= 4 ? <BsStarFill /> : stars >= 3.5 ? <BsStarHalf /> : <BsStar />}
       </span>
       {/* end of star */}
+      {/* star */}
+      <span>
+        {stars = 5 ? <BsStarFill /> : stars >= 4.5 ? <BsStarHalf /> : <BsStar />}
+      </span>
+      {/* end of star */}
     </div>
     <p className="reviews">({reviews} customer reviews)</p>
   </Wrapper>
