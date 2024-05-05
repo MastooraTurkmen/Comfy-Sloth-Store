@@ -2,8 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaPlus, FaMinus } from 'react-icons/fa'
 
-const AmountButtons = () => {
-  return <h4>amount buttons </h4>
+const AmountButtons = ({ increase, decrease, amount }) => {
+  return (
+    < Wrapper className='amount-btns'>
+      <button type='button' onClick={decrease} className="amount-btn">
+        <FaMinus />
+      </button>
+      <button type='button' onClick={increase} className="amount-btn">
+        <FaPlus />
+      </button>
+    </Wrapper >
+  )
 }
 
 const Wrapper = styled.div`
