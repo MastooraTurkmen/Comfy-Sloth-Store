@@ -20,21 +20,41 @@ const Filters = () => {
 
   return <Wrapper>
     <div className="content">
-      <form onSubmit={(e) => e.preventDefault()}></form>
-      {/* search input */}
-      <div className="form-control">
-        <input
-          type="text"
-          name="text"
-          placeholder='search'
-          value={text}
-          className='search-input'
-          onChange={updateFilters}
-        />
-      </div>
-      {/* end search input */}
+      <form onSubmit={(e) => e.preventDefault()}>
+        {/* search input */}
+        <div className="form-control">
+          <input
+            type="text"
+            name="text"
+            placeholder='search'
+            value={text}
+            className='search-input'
+            onChange={updateFilters}
+          />
+        </div>
+        {/* end search input */}
+        {/* categories */}
+        <div className="form-control">
+          <h5>category</h5>
+          <div>{
+            categories.map((c, index) => {
+              return (
+                <button
+                  key={index}
+                  type='button'
+                  name='category'
+                  onClick={updateFilters}
+                  className={`${category === c.toLowerCase() ? 'active' : null}`}
+                >{c}</button>
+              )
+            })
+          }
+          </div>
+        </div>
+        {/* end of categories */}
+      </form>
     </div>
-  </Wrapper>
+  </Wrapper >
 }
 
 const Wrapper = styled.section`
