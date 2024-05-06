@@ -30,7 +30,15 @@ const filter_reducer = (state, action) => {
     let tempFilter = [...filtered_products]
 
     if (sort === 'price-lowest') {
-      tempFilter = tempFilter.sort((a, b) => a.price - b.price)
+      tempFilter = tempFilter.sort((a, b) => {
+        if (a.price < b.price) {
+          return -1
+        }
+        if (a.price > b.price) {
+          return 1
+        }
+        return 0
+      })
     }
     if (sort === 'price-highest') {
       tempFilter = tempFilter.sort((a, b) => b.price - a.price)
