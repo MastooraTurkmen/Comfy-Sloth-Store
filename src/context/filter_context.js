@@ -16,6 +16,7 @@ const initialState = {
   filtered_products: [],
   all_products: [],
   grid_view: false,
+  sort: 'price-lowest',
 }
 
 const FilterContext = React.createContext()
