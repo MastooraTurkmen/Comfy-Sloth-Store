@@ -103,9 +103,9 @@ const Filters = () => {
           <input
             type="range"
             name="price"
-            onChange={updateFilters}
             min={min_price}
             max={max_price}
+            onChange={updateFilters}
             value={price}
           />
         </div>
