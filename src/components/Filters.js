@@ -7,7 +7,7 @@ import { FaCheck } from 'react-icons/fa'
 const Filters = () => {
   const {
     filters: {
-      text, category, company, color, price, max_price, shipping
+      text, category, company, color, price, max_price, shipping, min_price
     },
     updateFilters,
     clearFilters,
@@ -67,49 +67,49 @@ const Filters = () => {
           <h5>colors</h5>
           <div className="colors">
             {colors.map((c, index) => {
-              return <button
-                key={index}
-                name='color'
-                style={{ background: color }}
-                className={`${color === c ? 'color-btn active' : 'active'}`}
-                data-color={c}
-                onClick={updateFilters}
-              >
-                {color === c ? <FaCheck /> : null}
-              </button>
-            })}
-          </div>
-        </div>
-        {/* end of colors */}
-        {/* colors */}
-        <div className="form-control">
-          <h5>colors</h5>
-          <div className="colors">
-            {colors.map((c, index) => {
               if (c === 'all') {
-                return <button
+                return (
+                  <button
+                    key={index}
+                    name='color'
+                    className={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}
+                    data-color='all'
+                    onClick={updateFilters}
+                  >
+                    all
+                  </button>
+                )
+              }
+              return (
+                <button
+                  key={index}
                   name='color'
-                  className={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}
-                  data-color='all'
+                  style={{ background: c }}
+                  className={`${color === c ? 'color-btn active' : 'active'}`}
+                  data-color={c}
                   onClick={updateFilters}
                 >
-                  all
+                  {color === c ? <FaCheck /> : null}
                 </button>
-              }
-              return <button
-                key={index}
-                name='color'
-                style={{ background: color }}
-                className={`${color === c ? 'color-btn active' : 'active'}`}
-                data-color={c}
-                onClick={updateFilters}
-              >
-                {color === c ? <FaCheck /> : null}
-              </button>
+              )
             })}
           </div>
         </div>
         {/* end of colors */}
+        {/* price */}
+        <div className="form-control">
+          <h5>price</h5>
+          <p className="price">{formatPrice(price)}</p>
+          <input
+            type="range"
+            name="price"
+            onChange={updateFilters}
+            min={min_price}
+            max={max_price}
+            value={price}
+          />
+        </div>
+        {/* end of price */}
       </form>
     </div>
   </Wrapper >
