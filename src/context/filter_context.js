@@ -68,12 +68,22 @@ export const FilterProvider = ({ children }) => {
     if (name === 'color') {
       value = e.target.dataset.color
     }
+    if (name === 'price') {
+      value = Number(value)
+    }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } })
   }
   const clearFilters = (e) => { }
 
   return (
-    <FilterContext.Provider value={{ ...state, setGridView, setListView, updateSort, updateFilters, clearFilters }}>
+    <FilterContext.Provider value={{
+      ...state,
+      setGridView,
+      setListView,
+      updateSort,
+      updateFilters,
+      clearFilters
+    }}>
       {children}
     </FilterContext.Provider>
   )
