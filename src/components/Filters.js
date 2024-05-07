@@ -52,6 +52,64 @@ const Filters = () => {
           </div>
         </div>
         {/* end of categories */}
+        {/* companies */}
+        <div className="form-control">
+          <h5>company</h5>
+          <select name="company" value={company} onChange={updateFilters} className='company'>
+            {companies.map((c, index) => {
+              return <option key={index}>{c}</option>
+            })}
+          </select>
+        </div>
+        {/* end of companies */}
+        {/* colors */}
+        <div className="form-control">
+          <h5>colors</h5>
+          <div className="colors">
+            {colors.map((c, index) => {
+              return <button
+                key={index}
+                name='color'
+                style={{ background: color }}
+                className={`${color === c ? 'color-btn active' : 'active'}`}
+                data-color={c}
+                onClick={updateFilters}
+              >
+                {color === c ? <FaCheck /> : null}
+              </button>
+            })}
+          </div>
+        </div>
+        {/* end of colors */}
+        {/* colors */}
+        <div className="form-control">
+          <h5>colors</h5>
+          <div className="colors">
+            {colors.map((c, index) => {
+              if (c === 'all') {
+                return <button
+                  name='color'
+                  className={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}
+                  data-color='all'
+                  onClick={updateFilters}
+                >
+                  all
+                </button>
+              }
+              return <button
+                key={index}
+                name='color'
+                style={{ background: color }}
+                className={`${color === c ? 'color-btn active' : 'active'}`}
+                data-color={c}
+                onClick={updateFilters}
+              >
+                {color === c ? <FaCheck /> : null}
+              </button>
+            })}
+          </div>
+        </div>
+        {/* end of colors */}
       </form>
     </div>
   </Wrapper >
