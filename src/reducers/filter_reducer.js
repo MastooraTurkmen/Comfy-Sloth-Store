@@ -105,6 +105,12 @@ const filter_reducer = (state, action) => {
       })
     }
 
+    // price
+
+    tempProducts = tempProducts.filter((product) => {
+      return product.price <= price
+    })
+
     // shipping
     if (shipping) {
       tempProducts = tempProducts.filter((product) => {
