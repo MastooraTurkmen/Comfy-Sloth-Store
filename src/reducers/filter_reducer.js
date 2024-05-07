@@ -84,6 +84,14 @@ const filter_reducer = (state, action) => {
       })
     }
 
+    // category
+    if (category !== 'all') {
+      tempProducts = tempProducts.filter((product) => {
+        return product.category === category
+      })
+    }
+
+
     return { ...state, filtered_products: tempProducts }
   }
 
