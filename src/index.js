@@ -8,7 +8,6 @@ import { FilterProvider } from './context/filter_context';
 import { CartProvider } from './context/cart_context';
 import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { REACT_APP_AUTH_DOMAIN, REACT_APP_CLIENT_ID } from './.env';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // Domain
@@ -20,8 +19,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
     <Auth0Provider
-        domain='dev-4sh38sflzcxe70tg.us.auth0.com'
-        clientId='GnteJdrltIJyjsDEvuBumu4wQAws1GnL'
+        domain={process.env.REACT_APP_AUTH_DOMAIN}
+        clientId={process.env.REACT_APP_CLIENT_ID}
         authorizationParams={{
             redirect_uri: window.location.origin
         }}
