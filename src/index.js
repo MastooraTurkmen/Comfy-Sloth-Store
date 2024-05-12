@@ -10,12 +10,6 @@ import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// Domain
-// dev-4sh38sflzcxe70tg.us.auth0.com
-
-// Client ID
-// GnteJdrltIJyjsDEvuBumu4wQAws1GnL
-
 
 root.render(
     <Auth0Provider
