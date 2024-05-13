@@ -45,6 +45,9 @@ const CheckoutForm = () => {
     <div>
       <form id='payment-form' onSubmit={handleSubmit}>
         <CardElement id='card-element' options={cardStyle} onChange={handleChange} />
+        <button disabled={processing || disabled || succeeded} id='submit'>
+          <span id='button-text'>{processing ? <div id='spinner' className='spinner'></div> : "Pay"}</span>
+        </button>
       </form>
     </div>
   )
