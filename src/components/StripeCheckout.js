@@ -24,6 +24,9 @@ const CheckoutForm = () => {
   const [error, setError] = useState(null)
   const [processing, setProcessing] = useState('')
   const [disabled, setDisabled] = useState(true)
+  const [clientSecret, setClientSecret] = useState('')
+  const strip = useStripe()
+  const element = useElements()
 
   return <h4>hello from Stripe Checkout </h4>
 }
