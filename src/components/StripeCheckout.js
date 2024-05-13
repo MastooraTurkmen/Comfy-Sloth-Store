@@ -51,7 +51,12 @@ const CheckoutForm = () => {
         {/* show any error that happens when processing the payment */}
         {error && <div className='card-error' role='alert'>{error}</div>}
         {/* show a success message upon completion */}
-        <p className={succeeded ? 'result-message' : 'result-message hidden'}>Payment Succeeded</p>
+        <p className={succeeded ? 'result-message' : 'result-message hidden'}>
+          Payment Succeeded, see the result in your <a href={`https://dashboard.stripe.com/test/payments`}>
+            Stripe dashboard
+          </a>
+          Refresh the page to pay
+        </p>
       </form>
     </div>
   )
