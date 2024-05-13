@@ -48,6 +48,8 @@ const CheckoutForm = () => {
         <button disabled={processing || disabled || succeeded} id='submit'>
           <span id='button-text'>{processing ? <div id='spinner' className='spinner'></div> : "Pay"}</span>
         </button>
+        {/* show any error that happens when processing the payment */}
+        {error && <div className='card-error' role='alert'>{error}</div>}
       </form>
     </div>
   )
