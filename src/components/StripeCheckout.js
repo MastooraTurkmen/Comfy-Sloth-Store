@@ -22,6 +22,7 @@ const CheckoutForm = () => {
 const StripeCheckout = () => {
   return (
     <Wrapper>
+      <Elements stripe={promise}></Elements>
       <CheckoutForm />
     </Wrapper>
   )
