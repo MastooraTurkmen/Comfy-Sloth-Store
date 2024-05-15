@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const ProductImages = ({ images = [{ url: '' }] }) => {
+const ProductImages = ({ images = [[]] }) => {
   const [main, setMain] = useState(images[0])
 
   return (
     <Wrapper>
-      <img className='main' src={main.url} alt='main' />
-      <div className="gallery">
+      <img src={main.url} alt='' className='main ' />
+      <div className='gallery'>
         {images.map((image, index) => {
-          console.log(image);
-          return <img
-            key={index}
-            onClick={() => setMain(images[index])}
-            alt={image.filename}
-            src={image.url}
-            className={`${image.url === main.url ? 'active' : null}`}
-          />
+          return (
+            <img
+              src={image.url}
+              alt=''
+              key={index}
+              className={`${image.url === main.url ? 'active' : null}`}
+              onClick={() => setMain(images[index])}
+            />
+          )
         })}
       </div>
     </Wrapper>
@@ -44,7 +45,7 @@ const Wrapper = styled.section`
     }
   }
   .active {
-    box-shadow: 0px 0px 0px 2px var(--clr-primary-5);
+    border: 2px solid var(--clr-primary-5);
   }
   @media (max-width: 576px) {
     .main {
