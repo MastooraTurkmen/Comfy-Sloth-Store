@@ -14,31 +14,30 @@ const Nav = () => {
 
   return (
     <NavContainer>
-      <div className="nav-center">
-        <div className="nav-header">
+      <div className='nav-center'>
+        <div className='nav-header'>
           <Link to='/'>
-            <img src={logo} alt="comfy sloth" />
+            <img src={logo} alt='comfy sloth' />
           </Link>
-          <button type="button" className='nav-toggle' onClick={openSidebar}>
+          <button type='button' className='nav-toggle' onClick={openSidebar}>
             <FaBars />
           </button>
         </div>
-        <ul className="nav-links">
+        <ul className='nav-links'>
           {links.map((link) => {
-            const { id, text, url } = link;
-            return <li key={id}>
-              <Link to={url}>{text}</Link>
-            </li>
+            const { id, text, url } = link
+            return (
+              <li key={id}>
+                <Link to={url}>{text}</Link>
+              </li>
+            )
           })}
-          <li>
-            <Link to='/checkout'>checkout</Link>
-          </li>
+          {myUser && (
+            <li>
+              <Link to='/checkout'>checkout</Link>
+            </li>
+          )}
         </ul>
-        {myUser && (
-          <li>
-            <Link to='/checkout'>Checkout</Link>
-          </li>
-        )}
         <CartButtons />
       </div>
     </NavContainer>
