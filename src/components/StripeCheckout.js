@@ -49,7 +49,10 @@ const CheckoutForm = () => {
     setDisabled(event.empty)
     setError(event.error ? event.error.message : '')
   }
-  const handleSubmit = async (e) => { }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setProcessing(true)
+  }
 
   return (
     <div>
