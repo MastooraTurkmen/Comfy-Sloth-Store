@@ -52,6 +52,25 @@ const CheckoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setProcessing(true)
+
+    const payload = await strip.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: element.getElement(CardElement)
+      }
+    })
+
+    if (payload.error) {
+      setError(`Payment failed ${payload.error.message}`)
+      setProcessing(false)
+    } else {
+      setError(null)
+      setProcessing(false)
+      setSucceeded(true)
+      setTimeout(() => {
+        clearCart();
+        history.push('/')
+      }, 1000)
+    }
   }
 
   return (
