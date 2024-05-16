@@ -32,3 +32,9 @@ ntl dev
 ```sh
 npm install styled-components
 ```
+
+```js
+import styled from "styled-components";
+
+
+```
