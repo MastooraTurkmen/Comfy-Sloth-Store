@@ -2,7 +2,7 @@
 
 [React Comfy Sloth Store](https://myreact-comfy-sloth-project.netlify.app/)
 
-### Run
+### Run The App Locally
 
 ```bash
 npm install
