@@ -46,3 +46,7 @@ const Component = () => {
   );
 };
 ```
+
+----
+
+#### React Router 6
