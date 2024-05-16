@@ -30,4 +30,5 @@ ntl dev
 - [Styled Components Docs](https://styled-components.com/)
 
 ```sh
+npm install styled-components
 ```
