@@ -22,3 +22,7 @@ ntl dev
 
 ![alt text](./screenshots/image-4.png)
 ![alt text](./screenshots/image-5.png)
+
+---
+
+#### Styled Components
