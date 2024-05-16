@@ -40,7 +40,8 @@ const Wrapper = styled.el``;
 
 const Component = () => {
   return (
-    
+    <Wrapper>
+    </Wrapper>
   );
 };
 ```
