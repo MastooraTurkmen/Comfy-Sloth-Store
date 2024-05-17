@@ -54,4 +54,5 @@ const Component = () => {
 - [React Router Docs](https://reactrouter.com/docs/en/v6)
 
 ```sh
+npm install react-router-dom@6
 ```
