@@ -49,7 +49,7 @@ const Component = () => {
 
 ----
 
-#### React Router 6
+### React Router 6
 
 - [React Router Docs](https://reactrouter.com/docs/en/v6)
 
